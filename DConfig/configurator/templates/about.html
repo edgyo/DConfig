@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block titleblock %}Home{% endblock titleblock %}
+
+{% block headblock %}
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/heroes.css" rel="stylesheet">
+{% endblock headblock %}
+
+{% block content %}
+<!-- Begin page content -->
+<div class="px-4 py-5 my-5 text-center">
+  <img class="d-block mx-auto mb-4" src="https://www.freepnglogos.com/uploads/wrench/wrench-logo-png-gear-hard-repair-fix--0.png" alt="" style="height:200px;width:auto;">
+  <h1 class="display-5 fw-bold" style="color: #304830;">О проекте DConfig</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4" style="color: #304830;">
+        Проект DConfig разработан студентом группы МВА-220 Шевчуком Б.А. для дисциплины "ЭВМ и ПУ". В работе использован язык программирования Python и его фреймворк Django, а также библиотека Pillow и база данных sqlite3.
+    </p>
+  </div>
+</div>
+{% endblock content %}

@@ -9,6 +9,9 @@ from .models import *
 def home(request):
     return render(request, "home.html")
 
+def about(request):
+    return render(request, "about.html")
+
 def config(request, id):
     Config = Configuration.objects.get(id = id)
     price = Config.Case.price + Config.CPU.price + Config.GPU.price + Config.RAM.price + Config.SSD.price + Config.HDD.price + Config.PowerSupply.price + Config.Motherboard.price

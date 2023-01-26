@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.home, name='configurator.home'),
     path('config/<int:id>', views.config, name='configurator.configs'),
     path('home', views.home, name='configurator.home'),
+    path('about', views.about, name='configurator.about'),
     path('configurator', views.configurator, name='configurator.configurator'),
     path('components', views.components, name='configurator.components'),
     path('configs', views.configs, name='configurator.configs'),
