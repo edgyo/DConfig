@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block titleblock %}DConfig{% endblock titleblock %}
+
+{% block content %}
+<div class="container position-relative">
+    <p>&nbsp;</p>
+    <a class="link text-right" href="../configs">
+        <button type="button" class="btn btn-light translate-middle">
+            Назад
+        </button>
+    </a>
+    <h1 class="display-4 text-center">Сборка "{{ Config.name }}"</h1>
+        <h3 class="text-center">
+            Сумма: {{ price }}₽
+        </h3>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if Config %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+        <img src="{{Config.Case.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.Case }}
+                </h3>
+                {{ Config.Case.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.CPU.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.CPU }}
+                </h3>
+                {{ Config.CPU.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.GPU.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.GPU }}
+                </h3>
+                {{ Config.GPU.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.Motherboard.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.Motherboard }}
+                </h3>
+                {{ Config.Motherboard.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.RAM.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.RAM }}
+                </h3>
+                {{ Config.RAM.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.SSD.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.SSD }}
+                </h3>
+                {{ Config.SSD.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.HDD.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.HDD }}
+                </h3>
+                {{ Config.HDD.price }}₽
+            </div>
+        </div>
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Config.PowerSupply.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <h3 class="text-center">
+                    {{ Config.PowerSupply }}
+                </h3>
+                {{ Config.PowerSupply.price }}₽
+            </div>
+        </div>
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент данная сборка недоступна.</21>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

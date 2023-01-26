@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block titleblock %}DConfig{% endblock titleblock %}
+
+{% block content %}
+<!-- <h1>{{ section.title }}</h1> -->
+<div class="container position-relative">
+    <p>&nbsp;</p>
+    <a class="link text-right" href="../home">
+        <button type="button" class="btn btn-light translate-middle">
+            Назад
+        </button>
+    </a>
+    <h1 class="display-4 text-center">Конфигуратор ПК</h1>
+    <p>&nbsp;</p>
+    <form action="/configurator" method="post">
+        {% csrf_token %}
+        {{ form }}
+        {{ form.name.errors }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

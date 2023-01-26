@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block titleblock %}DConfig{% endblock titleblock %}
+
+{% block content %}
+<div class="container position-relative">
+    <p>&nbsp;</p>
+    <a class="link text-right" href="../home">
+        <button type="button" class="btn btn-light translate-middle">
+            Назад
+        </button>
+    </a>
+    <h1 class="display-3 text-center">Созданные сборки</h1>
+    <h1 class="display-4 text-center">Игровые</h1>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if CONFIG_list %}
+        {% for Config in CONFIG_list %}
+        {% if Config.purpose == 'gaming' %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <a class="nav-link" href="config/{{Config.id}}">
+                <button type="button" class="btn btn-lg">
+                <img src="{{Config.Case.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+                    <div class="container col-md-16 text-center">
+                        <h3 class="text-center">
+                            {{ Config.name }}
+                        </h3>
+                        {{ Config.price }}₽
+                    </div>
+                </button>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Офисные</h1>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if CONFIG_list %}
+        {% for Config in CONFIG_list %}
+        {% if Config.purpose == 'office' %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <a class="nav-link" href="config/{{Config.id}}">
+                <button type="button" class="btn btn-lg">
+                <img src="{{Config.Case.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+                    <div class="container col-md-16 text-center">
+                        <h3 class="text-center">
+                            {{ Config.name }}
+                        </h3>
+                        {{ Config.price }}₽
+                    </div>
+                </button>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Для дома</h1>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if CONFIG_list %}
+        {% for Config in CONFIG_list %}
+        {% if Config.purpose == 'home' %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <a class="nav-link" href="config/{{Config.id}}">
+                <button type="button" class="btn btn-lg">
+                <img src="{{Config.Case.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+                    <div class="container col-md-16 text-center">
+                        <h3 class="text-center">
+                            {{ Config.name }}
+                        </h3>
+                        {{ Config.price }}₽
+                    </div>
+                </button>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

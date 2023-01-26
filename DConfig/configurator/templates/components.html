@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block titleblock %}DConfig{% endblock titleblock %}
+
+{% block content %}
+<!-- <h1>{{ section.title }}</h1> -->
+<div class="container position-relative">
+    <p>&nbsp;</p>
+    <a class="link text-right" href="../home">
+        <button type="button" class="btn btn-light translate-middle">
+            Назад
+        </button>
+    </a>
+    <h1 class="display-4 text-center">Процессоры</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if CPU_list %}
+        {% for CPU in CPU_list %}
+        {% if CPU.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{CPU.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/cpu_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ CPU.name }}
+                        </h3>
+                        {{ CPU.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Материнские платы</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if MB_list %}
+        {% for Board in MB_list %}
+        {% if Board.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Board.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ Board.name }}
+                        </h3>
+                        {{ Board.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Оперативная память</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if RAM_list %}
+        {% for RAM in RAM_list %}
+        {% if RAM.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{RAM.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ RAM.name }}
+                        </h3>
+                        {{ RAM.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Корпуса</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if CASE_list %}
+        {% for Case in CASE_list %}
+        {% if Case.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{Case.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ Case.name }}
+                        </h3>
+                        {{ Case.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Видеокарты</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+        {% if GPU_list %}
+        {% for GPU in GPU_list %}
+        {% if GPU.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{GPU.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ GPU.name }}
+                        </h3>
+                        {{ GPU.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">SSD диски</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if SSD_list %}
+        {% for SSD in SSD_list %}
+        {% if SSD.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{SSD.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ SSD.name }}
+                        </h3>
+                        {{ SSD.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">HDD диски</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if HDD_list %}
+        {% for HDD in HDD_list %}
+        {% if HDD.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{HDD.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ HDD.name }}
+                        </h3>
+                        {{ HDD.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+    <h1 class="display-4 text-center">Блоки питания</h1>
+    <p>&nbsp;</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        {% if PS_list %}
+        {% for PS in PS_list %}
+        {% if PS.name != "None" %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{PS.image.url}}" class="img-fluid mx-auto d-block" style="height: 100px; width: auto;" alt="CPU image">
+            <div class="container col-md-16 text-center">
+                <a class="nav-link" href="configurator/mb_id={{CPU.id}}">
+                    <button type="button" class="btn btn-lg">
+                        <h3 class="text-center">
+                            {{ PS.name }}
+                        </h3>
+                        {{ PS.price }}₽
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные варианты отстутствуют.</21>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
